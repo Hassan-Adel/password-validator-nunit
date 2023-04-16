@@ -6,7 +6,7 @@ on:
   pull_request:
     types: [ opened, synchronize ]
 jobs:
-  dotnet-format:
+  dotnet-test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
