@@ -1,0 +1,16 @@
+name: Run Tests
+on: 
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [ opened, synchronize ]
+jobs:
+  dotnet-format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Run dotnet test
+        run: dotnet test

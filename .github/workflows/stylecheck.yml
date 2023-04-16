@@ -1,0 +1,16 @@
+name: Check formatting and coding standards
+on: 
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [ opened, synchronize ]
+jobs:
+  dotnet-format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Run dotnet format
+        run: dotnet format --verify-no-changes
